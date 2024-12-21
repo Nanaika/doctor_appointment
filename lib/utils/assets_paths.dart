@@ -9,6 +9,7 @@ abstract class AppImages {
   static const cat6 = "assets/images/cat6.png";
   static const cat7 = "assets/images/cat7.png";
   static const cat8 = "assets/images/cat8.png";
+  static const doc = "assets/images/doc.png";
 
   static const categories = [
     cat1,
@@ -28,6 +29,8 @@ abstract class AppIcons {
   static const notifications = "assets/icons/notifications.svg";
   static const about = "assets/icons/about.svg";
   static const showHide = "assets/icons/show_hide.svg";
+  static const searchSettings = "assets/icons/search_settings.svg";
+  static const notification = "assets/icons/notification.svg";
 
   static const mainIcons = [
     home, doctors, notifications, about

@@ -6,4 +6,6 @@ abstract class AppColors {
   static const backGround = Color(0xFFF9F9F9);
   static const primary = Color(0xFF18A0FB);
   static const red = Color(0xFFEB5757);
+  static const lightOrange = Color(0xFFFFA873);
+  static const lightViolet = Color(0xFF5554DB);
 }

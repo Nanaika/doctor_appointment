@@ -1,3 +1,5 @@
+import 'package:doctor_appoinment/pages/doctors_page.dart';
+import 'package:doctor_appoinment/pages/notification_page.dart';
 import 'package:doctor_appoinment/ui_kit/colors.dart';
 import 'package:doctor_appoinment/utils/assets_paths.dart';
 import 'package:doctor_appoinment/utils/constants.dart';
@@ -31,26 +33,22 @@ class _MainPageState extends State<MainPage> {
               Container(
                 color: Colors.yellow,
               ),
-              Container(
-                color: Colors.red,
-              ),
-              Container(
-                color: Colors.blue,
-              ),
+              const DoctorsPage(),
+              const NotificationPage(),
               Container(
                 color: Colors.greenAccent,
               ),
             ],
           ),
           Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0 - MediaQuery.of(context).viewInsets.bottom,
             child: BottomBar(
               onIndexChanged: (index) {
                 setPage(index);
               },
             ),
-            left: 0,
-            right: 0,
-            bottom: 0,
           )
         ],
       ),
