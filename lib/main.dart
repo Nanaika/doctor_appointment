@@ -1,7 +1,10 @@
 import 'package:doctor_appoinment/navigation/main_categories_page.dart';
+import 'package:doctor_appoinment/pages/doctors_details.dart';
 import 'package:doctor_appoinment/pages/forgot_password_page.dart';
+import 'package:doctor_appoinment/pages/get_appointment_page.dart';
 import 'package:doctor_appoinment/pages/login_page.dart';
 import 'package:doctor_appoinment/pages/main_page.dart';
+import 'package:doctor_appoinment/pages/payment_page.dart';
 import 'package:doctor_appoinment/pages/sign_up_page.dart';
 import 'package:doctor_appoinment/pages/splash_page.dart';
 import 'package:doctor_appoinment/ui_kit/colors.dart';
@@ -76,6 +79,18 @@ class MyApp extends StatelessWidget {
         AppRoutes.main => CupertinoPageRoute(
           settings: settings,
           builder: (context) => const MainPage(),
+        ),
+        AppRoutes.docDetails => CupertinoPageRoute(
+          settings: settings,
+          builder: (context) => const DoctorsDetails(),
+        ),
+        AppRoutes.getAppointment => CupertinoPageRoute(
+          settings: settings,
+          builder: (context) => const GetAppointmentPage(),
+        ),
+        AppRoutes.payment => CupertinoPageRoute(
+          settings: settings,
+          builder: (context) => const PaymentPage(),
         ),
         _ => null,
       },

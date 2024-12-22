@@ -10,6 +10,7 @@ abstract class AppImages {
   static const cat7 = "assets/images/cat7.png";
   static const cat8 = "assets/images/cat8.png";
   static const doc = "assets/images/doc.png";
+  static const userPhoto = "assets/images/userPhoto.png";
 
   static const categories = [
     cat1,
@@ -31,6 +32,16 @@ abstract class AppIcons {
   static const showHide = "assets/icons/show_hide.svg";
   static const searchSettings = "assets/icons/search_settings.svg";
   static const notification = "assets/icons/notification.svg";
+  static const like = "assets/icons/like.svg";
+  static const star = "assets/icons/star.svg";
+  static const crown = "assets/icons/crown.svg";
+  static const call = "assets/icons/call.svg";
+  static const video = "assets/icons/video.svg";
+  static const bigLike = "assets/icons/big_like.svg";
+  static const creditCard = "assets/icons/credit_card.svg";
+  static const gPay = "assets/icons/gpay.svg";
+  static const aPay = "assets/icons/apay.svg";
+  static const payPal = "assets/icons/paypal.svg";
 
   static const mainIcons = [
     home, doctors, notifications, about

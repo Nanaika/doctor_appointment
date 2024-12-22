@@ -1,3 +1,4 @@
+import 'package:doctor_appoinment/navigation/routes.dart';
 import 'package:doctor_appoinment/pages/components/custom_app_bar.dart';
 import 'package:doctor_appoinment/ui_kit/colors.dart';
 import 'package:doctor_appoinment/ui_kit/text_styles.dart';
@@ -74,7 +75,9 @@ class DoctorsPage extends StatelessWidget {
                     );
                   }
                   return DoctorTile(
-                    onPlusTap: () {},
+                    onPlusTap: () {
+                      Navigator.of(context).pushNamed(AppRoutes.docDetails);
+                    },
                   );
                 }),
               ),

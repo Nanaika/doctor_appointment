@@ -5,9 +5,10 @@ import '../../ui_kit/text_styles.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
-    super.key, required this.title, this.onBack,
+    super.key, required this.title, this.onBack, this.textColor = AppColors.black,
   });
   final String title;
+  final Color textColor;
   final void Function()? onBack;
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class CustomAppBar extends StatelessWidget {
         Expanded(
             child: Text(
               title,
-              style: AppStyles.displayMedium,
+              style: AppStyles.displayMedium.copyWith(color: textColor),
               textAlign: TextAlign.center,
             )),
         const SizedBox(

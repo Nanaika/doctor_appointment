@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 import '../../ui_kit/colors.dart';
 import '../../ui_kit/text_styles.dart';
@@ -7,9 +6,14 @@ import '../../utils/assets_paths.dart';
 
 class DoctorTile extends StatelessWidget {
   const DoctorTile({
-    super.key, this.onPlusTap,
+    super.key,
+    this.onPlusTap,
+    this.isAppointed = false,
   });
+
   final void Function()? onPlusTap;
+  final bool isAppointed;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -105,35 +109,55 @@ class DoctorTile extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: AppColors.primary.withOpacity(0.08),
-                    borderRadius: BorderRadius.circular(4.0),
-                  ),
-                  child: Text(
-                    '10:20 AM - 12:30 PM',
-                    style: AppStyles.labelMedium.copyWith(fontSize: 9),
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: AppColors.primary.withOpacity(0.08),
+                        borderRadius: BorderRadius.circular(4.0),
+                      ),
+                      child: Text(
+                        isAppointed ? 'Got Appointment' : '10:20 AM - 12:30 PM',
+                        style: AppStyles.labelMedium.copyWith(fontSize: 9),
+                      ),
+                    ),
+                    if(isAppointed)
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: AppColors.primary,
+                        borderRadius: BorderRadius.circular(4.0),
+                      ),
+                      child: Text(
+                        '\$20',
+                        style: AppStyles.bodyMedium
+                            .copyWith(fontWeight: FontWeight.w500, fontSize: 12, color: AppColors.white),
+                      ),
+                    )
+                  ],
                 )
               ],
             ),
           ),
+          if(!isAppointed)
           const SizedBox(
             width: 20,
           ),
-          GestureDetector(
-            onTap: onPlusTap,
-            child: Container(
-              padding: const EdgeInsets.all(4),
-              decoration: const BoxDecoration(color: AppColors.primary, shape: BoxShape.circle),
-              child: const Icon(
-                CupertinoIcons.add,
-                size: 12,
-                color: AppColors.white,
+          if (!isAppointed)
+            GestureDetector(
+              onTap: onPlusTap,
+              child: Container(
+                padding: const EdgeInsets.all(4),
+                decoration: const BoxDecoration(color: AppColors.primary, shape: BoxShape.circle),
+                child: const Icon(
+                  CupertinoIcons.add,
+                  size: 12,
+                  color: AppColors.white,
+                ),
               ),
-            ),
-          )
+            )
         ],
       ),
     );
